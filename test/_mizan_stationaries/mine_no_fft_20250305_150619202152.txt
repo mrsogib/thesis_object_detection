@@ -1,0 +1,18 @@
+img (1).jpg : newspaper (19.21%)
+img (2).jpg : stickynotes (22.57%)
+img (3).jpg : tiffinbox (12.15%)
+img (4).jpg : tiffinbox (18.48%)
+img (5).jpg : book (17.56%)
+img (6).jpg : newspaper (22.06%)
+img (7).jpg : book (13.25%)
+img (8).jpg : newspaper (17.22%)
+img (9).jpg : stickynotes (20.46%)
+img (10).jpg : knife (27.75%)
+img (11).jpg : newspaper (14.00%)
+img (12).jpg : pencil (14.99%)
+img (13).jpg : newspaper (20.99%)		(o)
+img (14).jpg : eraser (25.73%)
+img (77).jpg : stickynotes (26.28%)
+img (83).jpg : stickynotes (31.34%)
+
+(o) == correct / close
