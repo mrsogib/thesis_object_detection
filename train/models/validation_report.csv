@@ -1,0 +1,128 @@
+Image Path,Actual Class,Predicted Class,Confidence
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_24.jpg,paper_clip,eyeglass,0.6297
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_100.jpg,bottle,bottle,0.3144
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img_003.jpg,eyeglass,bottle,0.5378
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_20.jpg,marker,stapler,0.4476
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (9).jpg,stapler,pen,0.2978
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_29.jpg,stapler,pen,0.4968
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_19.jpg,stapler,stapler,0.4232
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (5).jpg,tiffinbox,eyeglass,0.3190
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (13).jpg,tiffinbox,eyeglass,0.3194
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_116.jpg,bottle,bottle,0.6234
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_36.jpg,bottle,eyeglass,0.3991
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_13.jpg,eyeglass,paper_clip,0.6536
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_48.jpg,eyeglass,pen,0.3690
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_15 (2).jpg,pen,pen,0.5222
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_049.jpg,bottle,bottle,0.7119
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_036.jpg,marker,marker,0.6929
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_025.jpg,marker,marker,0.7025
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (4).jpg,stapler,pen,0.2981
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_14.jpg,pen,eyeglass,0.2638
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_41.jpg,stapler,stapler,0.4553
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_014.jpg,bottle,bottle,0.5976
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (19).jpg,stapler,stapler,0.3382
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_28.jpg,bottle,bottle,0.3927
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (6).jpg,tiffinbox,pen,0.2890
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_11.jpg,bottle,bottle,0.2093
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_032.jpg,bottle,bottle,0.5152
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_46.jpg,paper_clip,bottle,0.3375
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_054 (2).jpg,marker,bottle,0.3904
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_9 (2).jpg,pen,pen,0.2308
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_31.jpg,marker,pen,0.3590
+E:\object_detection\work\train\3rd_stationaries\../datasets\eraser\img (9).jpg,eraser,pen,0.2561
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img (5).jpg,bottle,eyeglass,0.1907
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_23 (2).jpg,pen,pen,0.4556
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_36.jpg,eyeglass,eyeglass,0.4806
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_118.jpg,bottle,bottle,0.7672
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img_112.jpg,eyeglass,eyeglass,0.6903
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (3).jpg,pen,pen,0.5579
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img_116.jpg,eyeglass,eyeglass,0.8417
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (2).jpg,pen,bottle,0.5849
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_17.jpg,paper_clip,pen,0.3229
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_11.jpg,eyeglass,eyeglass,0.6641
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_36.jpg,paper_clip,paper_clip,0.5599
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_011.jpg,bottle,bottle,0.4492
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_17.jpg,marker,pen,0.3334
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_054.jpg,marker,marker,0.5386
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_1 (2).jpg,pen,pen,0.4729
+E:\object_detection\work\train\3rd_stationaries\../datasets\eraser\img (11).jpg,eraser,pen,0.4099
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_40.jpg,stapler,stapler,0.4972
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_22.jpg,bottle,pen,0.3397
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_27.jpg,marker,pen,0.2721
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_35.jpg,pen,pen,0.4244
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_1.jpg,eyeglass,bottle,0.5626
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_3.jpg,eyeglass,bottle,0.3467
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (20).jpg,stapler,pen,0.3335
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_33.jpg,paper_clip,eyeglass,0.2209
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img (11).jpg,bottle,eyeglass,0.3951
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_3.jpg,stapler,stapler,0.3024
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_44.jpg,marker,pen,0.2693
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (7).jpg,tiffinbox,pen,0.3177
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img (10).jpg,bottle,bottle,0.3833
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_39 (2).jpg,pen,pen,0.2776
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_2.jpg,stapler,stapler,0.3913
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_142.jpg,marker,eyeglass,0.7168
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_34.jpg,eyeglass,eyeglass,0.3963
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_40.jpg,marker,pen,0.4612
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_7.jpg,stapler,stapler,0.3614
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_149.jpg,bottle,bottle,0.7117
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_12.jpg,eyeglass,eyeglass,0.4649
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_29.jpg,bottle,pen,0.2668
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_43.jpg,bottle,bottle,0.6753
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img (9).jpg,eyeglass,bottle,0.2563
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_096.jpg,bottle,bottle,0.2722
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (10).jpg,tiffinbox,pen,0.4586
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img (11).jpg,eyeglass,eyeglass,0.2897
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_16.jpg,pen,eyeglass,0.2515
+E:\object_detection\work\train\3rd_stationaries\../datasets\eraser\img (13).jpg,eraser,bottle,0.4257
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_8 (2).jpg,pen,eyeglass,0.3320
+E:\object_detection\work\train\3rd_stationaries\../datasets\knife\img (3).jpg,knife,eyeglass,0.2718
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_8.jpg,paper_clip,paper_clip,0.3178
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_4.jpg,stapler,stapler,0.3985
+E:\object_detection\work\train\3rd_stationaries\../datasets\knife\4174.jpg,knife,stapler,0.2692
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_1.jpg,marker,pen,0.2574
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img_094.jpg,eyeglass,eyeglass,0.8102
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_39.jpg,pen,eyeglass,0.2356
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_046.jpg,bottle,bottle,0.7333
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_33.jpg,pen,pen,0.3920
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_43.jpg,marker,pen,0.4783
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_37 (2).jpg,pen,bottle,0.6091
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_11.jpg,marker,pen,0.3242
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_18.jpg,pen,pen,0.2904
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img_040.jpg,marker,marker,0.4980
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_2.jpg,pen,bottle,0.3477
+E:\object_detection\work\train\3rd_stationaries\../datasets\knife\img (4).jpg,knife,pen,0.2571
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img (21).jpg,eyeglass,eyeglass,0.4053
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (16).jpg,pen,pen,0.5272
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_107.jpg,bottle,bottle,0.6805
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_21.jpg,eyeglass,eyeglass,0.7208
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_114.jpg,bottle,bottle,0.7991
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_061.jpg,bottle,bottle,0.6333
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\img_080.jpg,bottle,bottle,0.4624
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_13 (2).jpg,pen,pen,0.5590
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_22.jpg,eyeglass,stapler,0.4251
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img_140.jpg,eyeglass,eyeglass,0.6460
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_4.jpg,paper_clip,pen,0.2797
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_42.jpg,eyeglass,stapler,0.3868
+E:\object_detection\work\train\3rd_stationaries\../datasets\knife\img (2).jpg,knife,pen,0.4285
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_30.jpg,bottle,bottle,0.5857
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_49.jpg,eyeglass,eyeglass,0.4722
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (sd1).jpg,pen,pen,0.5835
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (14).jpg,pen,marker,0.3329
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img (10).jpg,marker,pen,0.3748
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\img (10).jpg,eyeglass,eyeglass,0.2282
+E:\object_detection\work\train\3rd_stationaries\../datasets\bottle\Image_10.jpg,bottle,bottle,0.7099
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_4.jpg,marker,pen,0.4175
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (7).jpg,stapler,pen,0.3776
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (20).jpg,pen,eyeglass,0.3719
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\Image_30.jpg,stapler,stapler,0.5235
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_45.jpg,paper_clip,bottle,0.5158
+E:\object_detection\work\train\3rd_stationaries\../datasets\eyeglass\Image_17.jpg,eyeglass,bottle,0.5323
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\img (7).jpg,marker,eyeglass,0.1705
+E:\object_detection\work\train\3rd_stationaries\../datasets\tiffinbox\img (25).jpg,tiffinbox,pen,0.3646
+E:\object_detection\work\train\3rd_stationaries\../datasets\stapler\img (12).jpg,stapler,pen,0.4447
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_17 (2).jpg,pen,pen,0.2616
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\img (18).jpg,pen,bottle,0.4859
+E:\object_detection\work\train\3rd_stationaries\../datasets\paper_clip\Image_10.jpg,paper_clip,eyeglass,0.3698
+E:\object_detection\work\train\3rd_stationaries\../datasets\marker\Image_28.jpg,marker,pen,0.2814
+E:\object_detection\work\train\3rd_stationaries\../datasets\pen\Image_28.jpg,pen,pen,0.5717
