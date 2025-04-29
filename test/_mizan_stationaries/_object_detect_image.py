@@ -1,80 +1,122 @@
-import cv2
-import numpy as np
-import joblib
-import scipy.fftpack
 import os
-from sklearn.preprocessing import StandardScaler
+import joblib
+import numpy as np
+from skimage import io, transform, color
+from scipy.special import legendre
 from datetime import datetime
+from tqdm import tqdm
 
-# Load the trained model and scaler
-svm_model = joblib.load('models/svm_model.pkl')
-scaler = joblib.load('models/scaler.pkl')
+def load_model(model_path):
+    """Load trained model and metadata"""
+    data = joblib.load(model_path)
+    return data['model'], data['scaler'], data['metadata']
 
-# Function to extract features using Fourier Transform
-def extract_fourier_features(image):
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    small_image = cv2.resize(gray, (32, 32))  # Use the same size as used during training
-    f_transform = scipy.fftpack.fft2(small_image)
-    f_shift = scipy.fftpack.fftshift(f_transform)
-    magnitude_spectrum = 20 * np.log(np.abs(f_shift) + 1).astype(np.float32)  # Use float32
-    return magnitude_spectrum.flatten()
+def handle_image_channels(img, metadata):
+    """Resize and convert to grayscale using model parameters"""
+    target_size = (metadata['target_h'], metadata['target_w'])
+    resized_img = transform.resize(img, target_size, anti_aliasing=True)
+    
+    if resized_img.ndim == 2:
+        return resized_img
+    elif resized_img.shape[2] >= 3:
+        return color.rgb2gray(resized_img[:, :, :3])
+    return color.rgb2gray(resized_img)
 
-# Function to generate Legendre Polynomial Features
-def legendre_polynomial_features(data, degree=4):
-    coeffs = np.polynomial.legendre.legval(data, np.ones(degree))
-    return coeffs.flatten()
+def extract_fft_features(gray_img, metadata):
+    """FFT feature extraction using model parameters"""
+    fft = np.fft.fft2(gray_img)
+    fft_shift = np.fft.fftshift(fft)
+    magnitude = np.abs(fft_shift)
+    sorted_mag = np.sort(magnitude.flatten())[::-1]
+    return sorted_mag[:metadata['fft_top']]
 
-# Directory containing images for detection
-image_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../test_images')
-output_directory = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../output_images')
-os.makedirs(output_directory, exist_ok=True)
+def extract_legendre_moments(gray_img, metadata):
+    """Legendre moments using model parameters"""
+    size = metadata['target_w']
+    order = metadata['legendre_order']
 
-# Initialize a dictionary to store the detections for each image
-image_detections = {}
+    x = np.linspace(-1, 1, size)
+    y = np.linspace(-1, 1, size)
+    moments = []
+    
+    for n in range(order + 1):
+        for m in range(order + 1 - n):
+            Pn = legendre(n)(x)
+            Pm = legendre(m)(y)
+            moments.append(np.sum(gray_img * np.outer(Pm, Pn)))
+    return np.array(moments)
 
-# Process each image in the directory
-for image_name in os.listdir(image_directory):
-    image_path = os.path.join(image_directory, image_name)
-    image = cv2.imread(image_path)
-    if image is not None:
-        # Extract features from the image
-        fourier_features = extract_fourier_features(image)
-        legendre_features = legendre_polynomial_features(fourier_features)
-        features = np.hstack((fourier_features, legendre_features))  # Combine features
-
-        # Normalize features
+def process_image(img_path, scaler, metadata):
+    """Process single image for prediction"""
+    try:
+        img = io.imread(img_path)
+        gray = handle_image_channels(img, metadata)
+        fft_features = extract_fft_features(gray, metadata)
+        legendre_features = extract_legendre_moments(gray, metadata)
+        features = np.concatenate([fft_features, legendre_features])
         features_scaled = scaler.transform([features])
+        return features_scaled, None
+    except Exception as e:
+        return None, str(e)
 
-        # Predict with SVM model
-        prediction = svm_model.predict(features_scaled)
-        prediction_proba = svm_model.predict_proba(features_scaled)
-        confidence = prediction_proba[0][svm_model.classes_.tolist().index(prediction[0])] * 100
 
-        # Print prediction in real time
-        print(f"Image: {image_name} | Prediction: {prediction[0]} | Confidence: {confidence:.2f}%")
+def bulk_predict(image_dir, model_path):
+    """Predict classes for all images in directory"""
+    model, scaler, metadata = load_model(model_path)
+    class_mapping = metadata['class_mapping']
+    
+    image_files = [f for f in os.listdir(image_dir) 
+                  if f.lower().endswith(('.png', '.jpg', '.jpeg'))]
+    
+    results = []
+    high_confidence_count = 0
 
-        # Draw rectangle around the object
-        h, w, _ = image.shape
-        cv2.rectangle(image, (0, 0), (w, h), (0, 255, 0), 2)
+    for filename in tqdm(image_files, desc="Processing Images"):
+        img_path = os.path.join(image_dir, filename)
+        features, error = process_image(img_path, scaler, metadata)
         
-        # Add prediction text
-        cv2.putText(image, f'Prediction: {prediction[0]} ({confidence:.2f}%)', (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        result_image_path = os.path.join(output_directory, image_name)
-        cv2.imwrite(result_image_path, image)
-        
-        # Store the prediction for the image, separating multiple objects by commas
-        if image_name in image_detections:
-            image_detections[image_name] += f", {prediction[0]} ({confidence:.2f}%)"
+        if features is not None:
+            proba = model.predict_proba(features)[0]
+            pred_idx = np.argmax(proba)
+            confidence = proba[pred_idx]
+            
+            if confidence >= 0.5:
+                high_confidence_count += 1
+                
+            results.append({
+                'file': filename,
+                'class': class_mapping[pred_idx],
+                'confidence': confidence,
+                'error': None
+            })
         else:
-            image_detections[image_name] = f"{prediction[0]} ({confidence:.2f}%)"
-    else:
-        print(f"Failed to load image: {image_path}")
+            results.append({
+                'file': filename,
+                'class': None,
+                'confidence': None,
+                'error': error
+            })
 
-current_time = datetime.now().strftime('%Y%m%d_%H%M%S%f')
+    # Save results with UTF-8 encoding
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = f"prediction_results_{timestamp}.txt"
+    
+    with open(output_file, 'w', encoding='utf-8') as f:
+        f.write(f"High Confidence Detections (>=50%): {high_confidence_count}/{len(results)} ({high_confidence_count/len(results):.1%})\n")
+        f.write("Image Path|Predicted Class|Confidence|Error\n")
+        f.write("-"*50 + "\n")
+        
+        for res in results:
+            conf_str = f"{res['confidence']:.2%}" if res['confidence'] is not None else "N/A"
+            line = f"{res['file']}|{res['class']}|{conf_str}|{res['error'] or ''}\n"
+            f.write(line)
 
-# Write the predictions to a text file
-with open(f'mine_{current_time}.txt', "w") as f:
-    for image_name, prediction in image_detections.items():
-        f.write(f"{image_name} : {prediction}\n")
+    print(f"\nPrediction complete! Results saved to {output_file}")
+    print(f"High Confidence Detections: {high_confidence_count} ({high_confidence_count/len(results):.1%})")
+    return results
 
-print(f'\nObject detection completed and results saved to mine_{current_time}.txt\n')
+if __name__ == "__main__":
+    MODEL_PATH = "models/svm_model.joblib"
+    IMAGE_DIR = "../test_images"
+    results = bulk_predict(IMAGE_DIR, MODEL_PATH)
+
